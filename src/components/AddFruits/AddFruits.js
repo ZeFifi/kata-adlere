@@ -2,12 +2,16 @@ import React from 'react';
 import axios from 'axios';
 
 class AddFruits extends React.Component {
-    state = {
-        name: '',
-        description: '',
-        price: '',
-        image: '',
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            description: '',
+            price: '',
+            image: '',
+        };
+
+    }
 
     handleChange = event => {
         this.setState({ [event.target.name]: event.target.value });
