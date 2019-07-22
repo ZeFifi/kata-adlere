@@ -13,6 +13,13 @@
       "description": "bla bla",
       "price": 5,
       "image": "https://www.cuisinealafrancaise.com/img/thumbs/Nectarines-71c3e068c61c06bf0f69d6bb360e1eae.jpg"
+    },
+    {
+      "name": "Framboise",
+      "description": "Trop bon les framboises",
+      "price": "11",
+      "image": "https://img-3.journaldesfemmes.fr/lZqm2rIC2PMKPP1zVrNP7uFsyoo=/910x607/smart/91eed6d1ec5c4912849bc192c62161ab/ccmcms-jdf/10662426.jpg",
+      "id": 3
     }
   ],
   "vegetables": [
