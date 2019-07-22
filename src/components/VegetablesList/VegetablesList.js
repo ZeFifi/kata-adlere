@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import axios from "axios";
 
 class VegetablesList extends Component {
     constructor(props) {
@@ -10,10 +11,10 @@ class VegetablesList extends Component {
 
     componentDidMount() {
         let vegetablesStock = "http://localhost:3001/vegetables";
-        fetch(vegetablesStock)
-            .then(response => response.json())
-            .then(data => {
-                let vegetables = data.map((vegetable, index) => {
+        axios.get(vegetablesStock)
+            .then(response => {
+                let vegetables = response.data.map((vegetable, index) => {
+                    console.log(response.data);
                     return <div key={index}>
                         <h3>{vegetable.name}</h3>
                         <img src={vegetable.image} alt={vegetable.name} />
@@ -21,7 +22,7 @@ class VegetablesList extends Component {
                         <p>{vegetable.price}</p>
                     </div>
                 });
-                this.setState({vegetables : vegetables});
+                this.setState({vegetables});
             })
     }
 
