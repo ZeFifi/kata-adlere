@@ -26,12 +26,12 @@ class ProductsList extends Component {
                             <td><img className="table-product-image" src={fruit.image} alt={fruit.image} /></td>
                             <td>
                                 <button className="btn btn-primary">Modifier</button>&nbsp;
-                                <button className="btn btn-danger">Supprimer</button>
+                                <button className="btn btn-danger" onClick={() => this.handleDeleteFruits(fruit.id)}>Supprimer</button>
                             </td>
                         </tr>
                 });
                 this.setState({fruits});
-            })
+            });
 
         let vegetablesStock = "http://localhost:3001/vegetables";
         axios.get(vegetablesStock)
@@ -46,13 +46,33 @@ class ProductsList extends Component {
                             <td><img className="table-product-image" src={vegetable.image} alt={vegetable.image} /></td>
                             <td>
                                 <button className="btn btn-primary">Modifier</button>&nbsp;
-                                <button className="btn btn-danger">Supprimer</button>
+                                <button onClick={() => this.handleDeleteVegetables(vegetable.id)} className="btn btn-danger">Supprimer</button>
                             </td>
                         </tr>
                 });
                 this.setState({vegetables});
             })
     }
+
+    handleDeleteFruits = (id) => {
+        const {fruits} = this.state;
+
+        axios.delete(`http://localhost:3001/fruits/${id}`)
+            .then(response => {
+                console.log(response.data);
+                this.setState({ fruits })
+            })
+    };
+
+    handleDeleteVegetables = (id) => {
+        const {vegetables} = this.state;
+
+        axios.delete(`http://localhost:3001/vegetables/${id}`)
+            .then(response => {
+                console.log(response.data);
+                this.setState({ vegetables })
+            })
+    };
 
     render() {
         const {fruits, vegetables} = this.state;

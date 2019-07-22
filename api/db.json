@@ -1,34 +1,4 @@
 {
-  "fruits": [
-    {
-      "id": 1,
-      "name": "pomme",
-      "description": "bla bla",
-      "price": 15,
-      "image": "https://assets.afcdn.com/recipe/20170607/67365_w300h300c1cx350cy350.jpg"
-    },
-    {
-      "id": 2,
-      "name": "nectarine",
-      "description": "bla bla",
-      "price": 5,
-      "image": "https://www.cuisinealafrancaise.com/img/thumbs/Nectarines-71c3e068c61c06bf0f69d6bb360e1eae.jpg"
-    },
-    {
-      "name": "Framboise",
-      "description": "Trop bon les framboises",
-      "price": "11",
-      "image": "https://img-3.journaldesfemmes.fr/lZqm2rIC2PMKPP1zVrNP7uFsyoo=/910x607/smart/91eed6d1ec5c4912849bc192c62161ab/ccmcms-jdf/10662426.jpg",
-      "id": 3
-    }
-  ],
-  "vegetables": [
-    {
-      "id": 1,
-      "name": "poireaux",
-      "description": "bla bla",
-      "price": 15,
-      "image": "https://deshydrateur-3011.kxcdn.com/wp-content/uploads/sites/7/2012/12/poireau.jpg"
-    }
-  ]
+  "fruits": [],
+  "vegetables": []
 }
