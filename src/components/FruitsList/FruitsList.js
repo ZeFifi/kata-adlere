@@ -18,7 +18,7 @@ class FruitsList extends Component {
                         <h3>{fruit.name}</h3>
                         <img src={fruit.image} alt={fruit.name} />
                         <p>{fruit.description}</p>
-                        <p>{fruit.price}</p>
+                        <p>{fruit.price}€</p>
                     </div>
                 });
                 this.setState({fruits});

@@ -26,7 +26,10 @@ class AddFruits extends React.Component {
             .then(res => {
                 console.log(res);
                 console.log(res.data);
-            })
+            });
+        setTimeout(() => {
+            document.location.reload()
+        }, 1000)
     };
 
     render() {

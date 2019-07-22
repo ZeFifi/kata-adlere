@@ -61,7 +61,10 @@ class ProductsList extends Component {
             .then(response => {
                 console.log(response.data);
                 this.setState({ fruits })
-            })
+            });
+        setTimeout(() => {
+            document.location.reload()
+        }, 1000)
     };
 
     handleDeleteVegetables = (id) => {
@@ -71,7 +74,10 @@ class ProductsList extends Component {
             .then(response => {
                 console.log(response.data);
                 this.setState({ vegetables })
-            })
+            });
+        setTimeout(() => {
+            document.location.reload()
+        }, 1000)
     };
 
     render() {

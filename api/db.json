@@ -1,4 +1,12 @@
 {
-  "fruits": [],
+  "fruits": [
+    {
+      "name": "Agrumes",
+      "description": "Les agrumes c'est trop bon",
+      "price": "5",
+      "image": "https://editionsdelarose.com/wp-content/uploads/2017/12/les-agrumes_620x400.jpg",
+      "id": 1
+    }
+  ],
   "vegetables": []
 }
