@@ -28,6 +28,16 @@
       "product": "Prunes",
       "quantity": "5",
       "id": 1
+    },
+    {
+      "product": "Prunes",
+      "quantity": 0,
+      "id": 2
+    },
+    {
+      "product": "Prunes",
+      "quantity": 0,
+      "id": 3
     }
   ]
 }

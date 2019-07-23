@@ -13,20 +13,46 @@ class Cart extends Component {
         axios.get("http://localhost:3001/cart")
             .then(response => {
                 let cart = response.data.map((item, index) => {
-                    return <li key={index}>
-                        {item.quantity} {item.product}
-                    </li>
+                    return <tr key={index}>
+                            <td>{item.product}</td>
+                            <td>{item.quantity}</td>
+                            <td><button className="btn btn-danger" onClick={() => this.handleDeleteItem(item.id)}>Supprimer</button></td>
+                        </tr>
                 })
                 this.setState({cart})
             })
     }
+
+    handleDeleteItem = (id) => {
+        const {cart} = this.state;
+
+        axios.delete(`http://localhost:3001/cart/${id}`)
+            .then(response => {
+                console.log(response.data);
+                this.setState({ cart })
+            });
+        setTimeout(() => {
+            document.location.reload()
+        }, 1000)
+    };
 
     render() {
         return (
             <React.Fragment>
                 <h1>Welcome on your cart</h1>
                 <p>Contenu de votre panier :</p>
-                <ul>{this.state.cart}</ul>
+                <table className="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Produit</th>
+                        <th scope="col">Quantité</th>
+                        <th scope="col">Supprimer</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {this.state.cart}
+                    </tbody>
+                </table>
             </React.Fragment>
         );
     }
