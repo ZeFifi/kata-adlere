@@ -6,10 +6,12 @@ class Admin extends Component {
     render() {
         return (
             <React.Fragment>
-                <h1>Welcome on the admin page</h1>
-                <AddFruits/>
-                <h2>Products</h2>
-                <ProductsList/>
+                <div className="container">
+                    <h1 className="mb-5">Bienvenue sur la page d'administration</h1>
+                    <AddFruits/>
+                    <h2>Products</h2>
+                    <ProductsList/>
+                </div>
 
             </React.Fragment>
         );

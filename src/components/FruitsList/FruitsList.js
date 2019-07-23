@@ -16,30 +16,34 @@ class FruitsList extends Component {
         axios.get(fruitsStock)
             .then(response => {
                 let fruits = response.data.map((fruit, index) => {
-                    return <div key={index}>
-                        <h3>{fruit.name}</h3>
-                        <img src={fruit.image} alt={fruit.name} />
-                        <p>{fruit.description}</p>
-                        <p>{fruit.price}€</p>
-                        <form onSubmit={this.handleSubmit}>
-                            <div className="form-group">
-                                <label htmlFor="quantity">Quantité</label>
-                                <select className="form-control" name="quantity" onChange={this.handleChange} >
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+                    return <div className="col-md-4" key={index}>
+                            <div className="card" style={{width: 18 + "rem"}}>
+                                <img src={fruit.image} className="card-img-top" alt={fruit.name}/>
+                                    <div className="card-body">
+                                        <h5 className="card-title">{fruit.name}</h5>
+                                        <p className="card-text">{fruit.description}</p>
+                                        <a href="#" className="btn btn-primary">Go somewhere</a>
+                                        <form onSubmit={this.handleSubmit}>
+                                            <div className="form-group">
+                                                <label htmlFor="quantity">Quantité</label>
+                                                <select className="form-control" name="quantity" onChange={this.handleChange} >
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                            <div className="form-check">
+                                                <input className="form-check-input" name="product" type="checkbox" value={fruit.name} onChange={this.handleChange}/>
+                                                <label className="form-check-label" htmlFor="defaultCheck1">
+                                                    Default checkbox
+                                                </label>
+                                            </div>
+                                            <button className="btn btn-primary" type="submit">Ajouter au panier</button>
+                                        </form>
+                                    </div>
                             </div>
-                            <div className="form-check">
-                                <input className="form-check-input" name="product" type="checkbox" value={fruit.name} onChange={this.handleChange}/>
-                                    <label className="form-check-label" htmlFor="defaultCheck1">
-                                        Default checkbox
-                                    </label>
-                            </div>
-                            <button className="btn btn-primary" type="submit">Ajouter au panier</button>
-                        </form>
                     </div>
                 });
                 this.setState({fruits});
@@ -70,9 +74,13 @@ class FruitsList extends Component {
 
         return (
             <React.Fragment>
-                <h1>Fruits</h1>
-                {fruits}
-                Quantité ajoutée : {this.state.quantity}
+                <div className="container">
+                    <h1>Fruits</h1>
+                    <div className="row">
+                        {fruits}
+                    </div>
+                    Quantité ajoutée : {this.state.quantity}
+                </div>
             </React.Fragment>
         );
     }

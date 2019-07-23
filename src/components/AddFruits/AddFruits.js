@@ -22,7 +22,7 @@ class AddFruits extends React.Component {
 
         const { name, description, price, image} = this.state;
 
-        axios.post(`http://localhost:3001/cart`, { name, description, price, image})
+        axios.post(`http://localhost:3001/fruits`, { name, description, price, image})
             .then(res => {
                 console.log(res);
                 console.log(res.data);
@@ -53,7 +53,7 @@ class AddFruits extends React.Component {
                         Image:
                         <input type="text" name="image" value={image} onChange={this.handleChange} />
                     </label>
-                    <button type="submit">Add</button>
+                    <button className="btn btn-primary" type="submit">Add</button>
                 </form>
             </div>
         )

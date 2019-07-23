@@ -39,20 +39,22 @@ class Cart extends Component {
     render() {
         return (
             <React.Fragment>
-                <h1>Welcome on your cart</h1>
-                <p>Contenu de votre panier :</p>
-                <table className="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">Produit</th>
-                        <th scope="col">Quantité</th>
-                        <th scope="col">Supprimer</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {this.state.cart}
-                    </tbody>
-                </table>
+                <div className="container">
+                    <h1 className="mb-5">Mon panier</h1>
+                    <p>Contenu de votre panier :</p>
+                    <table className="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Produit</th>
+                            <th scope="col">Quantité</th>
+                            <th scope="col">Supprimer</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {this.state.cart}
+                        </tbody>
+                    </table>
+                </div>
             </React.Fragment>
         );
     }
