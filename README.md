@@ -1,4 +1,4 @@
-#Kata for ADLERE
+# Kata for ADLERE
 
 This project is based on a Kata exercise for ADLERE.
 
