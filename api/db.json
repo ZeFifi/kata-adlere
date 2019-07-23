@@ -1,12 +1,33 @@
 {
   "fruits": [
     {
-      "name": "Agrumes",
-      "description": "Les agrumes c'est trop bon",
-      "price": "5",
-      "image": "https://editionsdelarose.com/wp-content/uploads/2017/12/les-agrumes_620x400.jpg",
+      "name": "Prunes",
+      "description": "Prunes du Portugal",
+      "price": "14",
+      "image": "https://www.lanutrition.fr/sites/default/files/styles/article_large/public/ressources/prunes_varietes_2.jpg?itok=3hkZzCj4",
       "id": 1
+    },
+    {
+      "name": "Brocoli",
+      "description": "Made in Portugal",
+      "price": "11",
+      "image": "https://img-3.journaldesfemmes.fr/wjnCY5AQuWb8uZgO6d5acTcQJOo=/910x607/smart/c74c02c06f094c709fe3478c583d0a4a/ccmcms-jdf/10659093.jpg",
+      "id": 2
+    },
+    {
+      "name": "Mangue",
+      "description": "Mangue du Portugal",
+      "price": "11",
+      "image": "https://img-3.journaldesfemmes.fr/Gq1IYwdEfbdUiXjI95EOYMBO-v8=/910x607/smart/09a82c5378224acea2eea07f9f36e4f0/ccmcms-jdf/10663045.jpg",
+      "id": 3
     }
   ],
-  "vegetables": []
+  "vegetables": [],
+  "cart": [
+    {
+      "product": "Prunes",
+      "quantity": "5",
+      "id": 1
+    }
+  ]
 }
