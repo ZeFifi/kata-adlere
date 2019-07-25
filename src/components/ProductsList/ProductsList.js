@@ -22,10 +22,10 @@ class ProductsList extends Component {
                             <th scope="row">{fruit.id}</th>
                             <td>{fruit.name}</td>
                             <td>{fruit.description}</td>
-                            <td>{fruit.price}</td>
+                            <td>{fruit.cat}</td>
+                            <td>{fruit.price}€</td>
                             <td><img className="table-product-image" src={fruit.image} alt={fruit.image} /></td>
                             <td>
-                                <button className="btn btn-primary">Modifier</button>&nbsp;
                                 <button className="btn btn-danger" onClick={() => this.handleDeleteFruits(fruit.id)}>Supprimer</button>
                             </td>
                         </tr>
@@ -45,7 +45,6 @@ class ProductsList extends Component {
                             <td>{vegetable.price}</td>
                             <td><img className="table-product-image" src={vegetable.image} alt={vegetable.image} /></td>
                             <td>
-                                <button className="btn btn-primary">Modifier</button>&nbsp;
                                 <button onClick={() => this.handleDeleteVegetables(vegetable.id)} className="btn btn-danger">Supprimer</button>
                             </td>
                         </tr>
@@ -91,9 +90,10 @@ class ProductsList extends Component {
                         <th scope="col">#</th>
                         <th scope="col">Nom</th>
                         <th scope="col">Description</th>
+                        <th scope="col">Catégorie</th>
                         <th scope="col">Prix</th>
                         <th scope="col">Image</th>
-                        <th scope="col">Actions</th>
+                        <th scope="col">Action</th>
                     </tr>
                     </thead>
                     <tbody>
