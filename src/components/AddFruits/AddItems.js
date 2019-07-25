@@ -42,14 +42,15 @@ class AddItems extends React.Component {
         const { name, description, price, image, cat} = this.state;
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <h2 className="mb-5">Ajouter un produit</h2>
+                <form className="mb-5" onSubmit={this.handleSubmit}>
                     <label>
-                        Fruit name:
-                        <input type="text" name="name" value={name} onChange={this.handleChange} />
+                        Nom du produit :
+                        <input className="form-control" type="text" name="name" value={name} onChange={this.handleChange} />
                     </label>
                     <label>
-                        Description:
-                        <input type="text" name="description" value={description} onChange={this.handleChange} />
+                        Description :
+                        <input className="form-control" type="text" name="description" value={description} onChange={this.handleChange} />
                     </label>
                     <div className="form-check">
                         <input id={this.nextUniqueId()} className="form-check-input" type="checkbox" name="Fruit" value={cat} onChange={this.handleCat}/>
@@ -64,12 +65,12 @@ class AddItems extends React.Component {
                             </label>
                     </div>
                     <label>
-                        Price:
-                        <input type="text" name="price" value={price} onChange={this.handleChange} />
+                        Prix unitaire TTC :
+                        <input className="form-control" type="text" name="price" value={price} onChange={this.handleChange} />
                     </label>
                     <label>
-                        Image:
-                        <input type="text" name="image" value={image} onChange={this.handleChange} />
+                        URL de l'image :
+                        <input className="form-control" type="text" name="image" value={image} onChange={this.handleChange} />
                     </label>
                     <button className="btn btn-primary" type="submit">Add</button>
                 </form>

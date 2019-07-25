@@ -50,7 +50,6 @@ class ProductsList extends Component {
         const {items} = this.state;
         return (
             <React.Fragment>
-                <h3>Fruits</h3>
                 <table className="table">
                     <thead>
                     <tr>

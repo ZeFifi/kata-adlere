@@ -9,7 +9,7 @@ class Admin extends Component {
                 <div className="container">
                     <h1 className="mb-5">Bienvenue sur la page d'administration</h1>
                     <AddItems/>
-                    <h2>Products</h2>
+                    <h2>Produits mis en ligne</h2>
                     <ProductsList/>
                 </div>
 
