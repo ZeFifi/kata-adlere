@@ -1,11 +1,13 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
+import logo from "../../images/logo.png"
+
 const Navbar = () => {
     return (
         <React.Fragment>
             <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5">
-                <Link to="/" className="navbar-brand">Navbar</Link>
+                <Link to="/" className="navbar-brand"><img className="logo" src={logo} alt={logo}/></Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
