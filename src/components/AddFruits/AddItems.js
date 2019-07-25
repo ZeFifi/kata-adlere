@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import uniqueId from "react-html-id";
 
 class AddItems extends React.Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class AddItems extends React.Component {
             image: '',
             cat: ""
         };
-
+        uniqueId.enableUniqueIds(this)
     }
 
     handleChange = event => {
@@ -51,14 +52,14 @@ class AddItems extends React.Component {
                         <input type="text" name="description" value={description} onChange={this.handleChange} />
                     </label>
                     <div className="form-check">
-                        <input className="form-check-input" type="checkbox" name="Fruit" value={cat} onChange={this.handleCat}/>
-                            <label className="form-check-label" htmlFor="defaultCheck1">
+                        <input id={this.nextUniqueId()} className="form-check-input" type="checkbox" name="Fruit" value={cat} onChange={this.handleCat}/>
+                            <label className="form-check-label" htmlFor={this.lastUniqueId()}>
                                 Fruit
                             </label>
                     </div>
                     <div className="form-check">
-                        <input className="form-check-input" type="checkbox" name="Légume" value={cat} onChange={this.handleCat}/>
-                            <label className="form-check-label" htmlFor="defaultCheck1">
+                        <input id={this.nextUniqueId()} className="form-check-input" type="checkbox" name="Légume" value={cat} onChange={this.handleCat}/>
+                            <label className="form-check-label" htmlFor={this.lastUniqueId()}>
                                 Légume
                             </label>
                     </div>

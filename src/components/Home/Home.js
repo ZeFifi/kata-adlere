@@ -6,8 +6,7 @@ class Home extends Component {
     render() {
         return (
             <React.Fragment>
-                <ItemsList title="Fruits" cat="fruits" item="fruit"/>
-                <ItemsList title="Légumes" cat="vegetables" item="vegetable"/>
+                <ItemsList title="Nos bons produits frais"/>
             </React.Fragment>
         );
     }

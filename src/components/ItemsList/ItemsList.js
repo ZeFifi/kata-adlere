@@ -1,25 +1,26 @@
 import React, {Component} from 'react';
-import axios from "axios"
+import axios from "axios";
+import uniqueId from "react-html-id";
 
 class ItemsList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            type : [],
+            items : [],
             quantity: 0,
             product: "",
             price: 0,
             checked: false
-        }
+        };
+        uniqueId.enableUniqueIds(this)
     }
 
     componentDidMount() {
-        const {cat} = this.props;
-        let itemsStock = `http://localhost:3001/${cat}`;
+        let itemsStock = `http://localhost:3001/items`;
         axios.get(itemsStock)
             .then(response => {
-                const type = response.data;
-                this.setState({type});
+                const items = response.data;
+                this.setState({items});
                 })
             .catch(error => console.log(error));
     }
@@ -39,14 +40,15 @@ class ItemsList extends Component {
     };
 
     render() {
-        const {type} = this.state;
+        const {items} = this.state;
         const {title} = this.props;
+
         return (
             <React.Fragment>
                 <div className="container mb-5">
                     <h1>{title}</h1>
                     <div className="row">
-                    {type.map((item, index) =>
+                    {items.map((item, index) =>
                         <div className="col-md-4 mb-4" key={index}>
                             <div className="card" style={{width: 18 + "rem"}}>
                                 <img src={item.image} className="card-img-top" alt={item.name}/>
@@ -66,10 +68,10 @@ class ItemsList extends Component {
                                             </select>
                                         </div>
                                         <div className="form-check">
-                                            <input className="form-check-input" name="product" type="checkbox" value={item.name} onChange={this.handleChange}/>
-                                            <label className="form-check-label" htmlFor="defaultCheck1">
-                                                Default checkbox
-                                            </label>
+                                            <input id={this.nextUniqueId()} className="form-check-input" name="product" type="checkbox" value={item.name} onChange={this.handleChange}/>
+                                            <label className="form-check-label" htmlFor={this.lastUniqueId()}>
+                                                Sélectionner
+                                            </label><br/><br/>
                                         </div>
                                         <button className="btn btn-primary" type="submit">Ajouter au panier</button>
                                     </form>

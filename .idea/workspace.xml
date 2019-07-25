@@ -4,8 +4,11 @@
     <list default="true" id="1514185c-1e6e-442b-a47e-3aeab8742936" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddFruits/AddFruits.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddFruits/AddItems.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/Admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddFruits/AddItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddFruits/AddItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ItemsList/ItemsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ItemsList/ItemsList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ProductsList/ProductsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductsList/ProductsList.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,7 +76,7 @@
       <workItem from="1563870508610" duration="2925000" />
       <workItem from="1563875900625" duration="6972000" />
       <workItem from="1563968983223" duration="8592000" />
-      <workItem from="1564043759829" duration="5622000" />
+      <workItem from="1564043759829" duration="9334000" />
     </task>
     <servers />
   </component>

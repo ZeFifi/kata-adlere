@@ -1,26 +1,5 @@
 {
-  "fruits": [
-    {
-      "name": "Prunes",
-      "description": "Prunes du Portugal",
-      "price": "14",
-      "image": "https://www.lanutrition.fr/sites/default/files/styles/article_large/public/ressources/prunes_varietes_2.jpg?itok=3hkZzCj4",
-      "id": 1
-    },
-    {
-      "name": "Mangue",
-      "description": "Mangue du Portugal",
-      "price": "11",
-      "image": "https://img-3.journaldesfemmes.fr/Gq1IYwdEfbdUiXjI95EOYMBO-v8=/910x607/smart/09a82c5378224acea2eea07f9f36e4f0/ccmcms-jdf/10663045.jpg",
-      "id": 3
-    },
-    {
-      "name": "Pomme",
-      "description": "Pomme du Portugal",
-      "price": "11",
-      "image": "https://fridg-front.s3.amazonaws.com/media/products/1227.jpg",
-      "id": 4
-    },
+  "items": [
     {
       "name": "Pamplemousse",
       "description": "Pamplemousse du Portugal",
@@ -38,27 +17,12 @@
       "id": 6
     }
   ],
-  "vegetables": [
-    {
-      "name": "Brocoli",
-      "description": "Made in Portugal",
-      "price": "11",
-      "image": "https://img-3.journaldesfemmes.fr/wjnCY5AQuWb8uZgO6d5acTcQJOo=/910x607/smart/c74c02c06f094c709fe3478c583d0a4a/ccmcms-jdf/10659093.jpg",
-      "id": 2
-    }
-  ],
   "cart": [
     {
-      "product": "Prunes",
+      "product": "Pamplemousse",
       "quantity": "5",
       "price": 0,
-      "id": 4
-    },
-    {
-      "product": "Mangue",
-      "quantity": "3",
-      "price": 0,
-      "id": 5
+      "id": 10
     }
   ]
 }
