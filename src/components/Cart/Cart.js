@@ -12,15 +12,9 @@ class Cart extends Component {
     componentDidMount() {
         axios.get("http://localhost:3001/cart")
             .then(response => {
-                let cart = response.data.map((item, index) => {
-                    return <tr key={index}>
-                            <td>{item.product}</td>
-                            <td>{item.quantity}</td>
-                            <td><button className="btn btn-danger" onClick={() => this.handleDeleteItem(item.id)}>Supprimer</button></td>
-                        </tr>
-                })
+                let cart = response.data;
                 this.setState({cart})
-            })
+                });
     }
 
     handleDeleteItem = (id) => {
@@ -37,9 +31,11 @@ class Cart extends Component {
     };
 
     render() {
+        const { cart } = this.state;
         return (
             <React.Fragment>
-                <div className="container">
+                { cart.length > 0 ?
+                    <div className="container">
                     <h1 className="mb-5">Mon panier</h1>
                     <p>Contenu de votre panier :</p>
                     <table className="table">
@@ -47,14 +43,25 @@ class Cart extends Component {
                         <tr>
                             <th scope="col">Produit</th>
                             <th scope="col">Quantité</th>
+                            <th scope="col">Prix</th>
                             <th scope="col">Supprimer</th>
                         </tr>
                         </thead>
                         <tbody>
-                        {this.state.cart}
+                        {cart.map((item, index) => {
+                            return <tr key={index}>
+                            <td>{item.product}</td>
+                            <td>{item.quantity}</td>
+                            <td></td>
+                            <td><button className="btn btn-danger" onClick={() => this.handleDeleteItem(item.id)}>Supprimer</button></td>
+                            </tr>}
+                        )}
                         </tbody>
                     </table>
                 </div>
+                : <div className="container">
+                        <p className="text-center">Vous n'avez aucun article dans votre panier.</p>
+                    </div>}
             </React.Fragment>
         );
     }

@@ -8,13 +8,6 @@
       "id": 1
     },
     {
-      "name": "Brocoli",
-      "description": "Made in Portugal",
-      "price": "11",
-      "image": "https://img-3.journaldesfemmes.fr/wjnCY5AQuWb8uZgO6d5acTcQJOo=/910x607/smart/c74c02c06f094c709fe3478c583d0a4a/ccmcms-jdf/10659093.jpg",
-      "id": 2
-    },
-    {
       "name": "Mangue",
       "description": "Mangue du Portugal",
       "price": "11",
@@ -29,29 +22,25 @@
       "id": 4
     }
   ],
-  "vegetables": [],
+  "vegetables": [
+    {
+      "name": "Brocoli",
+      "description": "Made in Portugal",
+      "price": "11",
+      "image": "https://img-3.journaldesfemmes.fr/wjnCY5AQuWb8uZgO6d5acTcQJOo=/910x607/smart/c74c02c06f094c709fe3478c583d0a4a/ccmcms-jdf/10659093.jpg",
+      "id": 2
+    }
+  ],
   "cart": [
     {
       "product": "Prunes",
-      "quantity": "5",
+      "quantity": "1",
       "id": 1
     },
     {
       "product": "Prunes",
-      "quantity": 0,
+      "quantity": "5",
       "id": 2
-    },
-    {
-      "product": "Prunes",
-      "quantity": 0,
-      "id": 3
-    },
-    {
-      "name": "Pomme",
-      "description": "Pomme du portugal",
-      "price": "11",
-      "image": "https://fridg-front.s3.amazonaws.com/media/products/1227.jpg",
-      "id": 4
     }
   ]
 }

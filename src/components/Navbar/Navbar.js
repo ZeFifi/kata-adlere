@@ -19,7 +19,7 @@ const Navbar = () => {
                             <Link to="/cart" className="nav-link">Mon panier</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/admin" className="nav-link" href="#">Admin</Link>
+                            <Link to="/admin" className="nav-link">Admin</Link>
                         </li>
                     </ul>
                 </div>

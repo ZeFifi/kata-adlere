@@ -5,6 +5,7 @@ import Admin from "./components/Admin/Admin";
 import Cart from "./components/Cart/Cart";
 import Navbar from "./components/Navbar/Navbar";
 
+import "./app.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import 'shards-ui/dist/css/shards.min.css';
 
