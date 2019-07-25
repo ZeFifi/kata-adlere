@@ -6,7 +6,8 @@ This project is based on a Kata exercise for ADLERE.
 
 As a user:
 * I can choose a product and select a quantity from the website and add it to my cart
-* I can see the price of each product and the total in my cart
+* I can see the price of each product
+* I can see the total in my cart
 * I can see the discounted price if the shop created a discount over a product
 
 As an Admin:

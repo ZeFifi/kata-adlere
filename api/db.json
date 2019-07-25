@@ -34,13 +34,15 @@
   "cart": [
     {
       "product": "Prunes",
-      "quantity": "1",
-      "id": 1
+      "quantity": "5",
+      "price": 0,
+      "id": 4
     },
     {
-      "product": "Prunes",
-      "quantity": "5",
-      "id": 2
+      "product": "Mangue",
+      "quantity": "3",
+      "price": 0,
+      "id": 5
     }
   ]
 }
