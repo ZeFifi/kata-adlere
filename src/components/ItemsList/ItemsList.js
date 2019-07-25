@@ -12,7 +12,8 @@ class ItemsList extends Component {
             price: 0,
             checked: false
         };
-        uniqueId.enableUniqueIds(this)
+        uniqueId.enableUniqueIds(this);
+        this.price = React.createRef();
     }
 
     componentDidMount() {
@@ -27,6 +28,7 @@ class ItemsList extends Component {
 
     handleChange = event => {
         this.setState({ [event.target.name]: event.target.value });
+        this.setState({price : this.price.current.innerHTML})
     };
 
     handleSubmit = event => {
@@ -53,9 +55,14 @@ class ItemsList extends Component {
                             <div className="card" style={{width: 18 + "rem"}}>
                                 <img src={item.image} className="card-img-top" alt={item.name}/>
                                 <div className="card-body">
+                                    {item.cat === "Fruit" ?
+                                        <span className="badge badge-primary">Fruit</span>
+                                        : <span className="badge badge-success">Légume</span>
+                                    }
                                     <h5 className="card-title">{item.name}</h5>
                                     <p className="card-text">{item.description} </p>
-                                        <p name="price">{item.price}€</p>
+                                        <span ref={this.price} value={item.price} onChange={this.handleChange}>{item.price}
+                                        </span><span>€</span>
                                     <form onSubmit={this.handleSubmit}>
                                         <div className="form-group">
                                             <select className="form-control" name="quantity" onChange={this.handleChange} >

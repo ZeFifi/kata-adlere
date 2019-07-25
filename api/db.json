@@ -15,14 +15,28 @@
       "price": "11",
       "image": "https://www.saveol.com/sites/default/files/2018-02/tomate-classique_1.png",
       "id": 6
+    },
+    {
+      "name": "Avocat",
+      "description": "Avocat du Portugal",
+      "cat": "Fruit",
+      "price": "27",
+      "image": "https://img-3.journaldesfemmes.fr/Y80Tv_whjHLpqe5xj4zfhEKnGww=/910x607/smart/7cd11422bbd64b76ad8c0b8ff3dc0e3a/ccmcms-jdf/10659032.jpg",
+      "id": 7
     }
   ],
   "cart": [
     {
       "product": "Pamplemousse",
       "quantity": "5",
-      "price": 0,
-      "id": 10
+      "price": "11",
+      "id": 12
+    },
+    {
+      "product": "Avocat",
+      "quantity": "5",
+      "price": "27",
+      "id": 13
     }
   ]
 }

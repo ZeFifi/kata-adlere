@@ -28,7 +28,7 @@ class AddItems extends React.Component {
 
         const { name, description, price, image, cat} = this.state;
 
-        axios.post(`http://localhost:3001/fruits`, { name, description, cat, price, image})
+        axios.post(`http://localhost:3001/items`, { name, description, cat, price, image})
             .then(res => {
                 console.log(res);
                 console.log(res.data);

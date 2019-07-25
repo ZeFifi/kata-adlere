@@ -49,10 +49,11 @@ class Cart extends Component {
                         </thead>
                         <tbody>
                         {cart.map((item, index) => {
+                            console.log(cart)
                             return <tr key={index}>
                             <td>{item.product}</td>
                             <td>{item.quantity}</td>
-                            <td></td>
+                            <td>{item.quantity * item.price}€</td>
                             <td><button className="btn btn-danger" onClick={() => this.handleDeleteItem(item.id)}>Supprimer</button></td>
                             </tr>}
                         )}
