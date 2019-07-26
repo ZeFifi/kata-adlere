@@ -37,6 +37,12 @@
       "quantity": "5",
       "price": 11,
       "id": 2
+    },
+    {
+      "product": "Tomates",
+      "quantity": "1",
+      "price": 11,
+      "id": 3
     }
   ]
 }

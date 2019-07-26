@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import AddItems from "../AddFruits/AddItems";
+import AddItems from "../AddItems/AddItems";
 import ProductsList from "../ProductsList/ProductsList";
 
 class Admin extends Component {
