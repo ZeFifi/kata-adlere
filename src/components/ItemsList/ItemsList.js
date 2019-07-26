@@ -29,14 +29,21 @@ class ItemsList extends Component {
 
     handleChange = event => {
         this.setState({ [event.target.name]: event.target.value });
-        // Converting the quantity string into an int
-        const quantity = parseFloat(this.quantity.current.value);
-        this.setState({quantity : quantity});
-        // Converting the price string into an int
-        const price = parseFloat(this.price.current.innerHTML);
-        this.setState({price : price});
+        console.log(this.price);
         // Total for 1 product
         this.setState({total : this.state.quantity * this.state.price})
+    };
+
+    handleQuantity = event => {
+        // Converting the quantity string into an int
+        const quantity = parseFloat(event.target.value);
+        this.setState({quantity : quantity});
+    };
+
+    handlePrice = event => {
+        // Converting the quantity string into an int
+        const price = parseFloat(event.target.innerHTML);
+        this.setState({price : price});
     };
 
     handleSubmit = event => {
@@ -67,14 +74,13 @@ class ItemsList extends Component {
                                         <span className="badge badge-primary">Fruit</span>
                                         : <span className="badge badge-success">Légume</span>
                                     }
-                                    <h5 className="card-title">{item.name}</h5>
+                                    <h5 className="card-title" name={item.name}>{item.name}</h5>
                                     <p className="card-text">{item.description} </p>
-                                        <span ref={this.price} value={item.price} onChange={this.handleChange}>{item.price}
+                                        <span ref={this.price} value={item.price} onChange={this.handlePrice}>{item.price}
                                         </span><span>€</span>
-                                    <input type="number" onChange={this.handleChange} name="total" />
-                                    <form onSubmit={this.handleSubmit}>
+                                    <form onSubmit={event => this.handleSubmit(event)}>
                                         <div className="form-group">
-                                            <select className="form-control" value={item.quantity} onChange={this.handleChange} >
+                                            <select className="form-control" value={item.quantity} onChange={this.handleQuantity} >
                                                 <option ref={this.quantity} value="default">Choisissez une quantité</option>
                                                 <option ref={this.quantity} value="1">1</option>
                                                 <option ref={this.quantity} value="2">2</option>

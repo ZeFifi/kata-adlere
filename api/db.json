@@ -44,83 +44,31 @@
   "cart": [
     {
       "product": "Pamplemousse",
-      "quantity": "5",
-      "price": 11,
+      "quantity": 3,
+      "price": 0,
+      "total": 0,
       "id": 1
     },
     {
       "product": "Tomates",
-      "quantity": "5",
-      "price": 11,
+      "quantity": 3,
+      "price": 0,
+      "total": 0,
       "id": 2
     },
     {
-      "product": "Tomates",
-      "quantity": "1",
-      "price": 11,
+      "product": "Kiwis",
+      "quantity": 3,
+      "price": 0,
+      "total": 0,
       "id": 3
     },
     {
-      "product": "Poireaux",
-      "quantity": "5",
-      "price": 0.5,
-      "id": 4
-    },
-    {
-      "product": "Pamplemousse",
-      "quantity": "5",
-      "price": 0.5,
-      "total": 0,
-      "id": 5
-    },
-    {
-      "product": "Pamplemousse",
-      "quantity": 0,
-      "price": 0.5,
-      "total": 0,
-      "id": 6
-    },
-    {
-      "product": "Pamplemousse",
-      "quantity": 0,
-      "price": 0.5,
-      "total": 0,
-      "id": 7
-    },
-    {
-      "product": "Pamplemousse",
-      "quantity": null,
-      "price": 0.5,
-      "total": null,
-      "id": 8
-    },
-    {
-      "product": "Pamplemousse",
-      "quantity": null,
-      "price": 0.5,
-      "total": null,
-      "id": 9
-    },
-    {
-      "product": "Pamplemousse",
-      "quantity": "default",
-      "price": 0.5,
-      "total": null,
-      "id": 10
-    },
-    {
-      "product": "Pamplemousse",
-      "quantity": "5",
-      "price": 0.5,
-      "total": 2.5,
-      "id": 11
-    },
-    {
-      "product": "Pamplemousse",
+      "product": "Kiwis",
       "quantity": 5,
-      "price": 0.5,
-      "total": 2.5,
-      "id": 12
+      "price": 0,
+      "total": 0,
+      "id": 4
     }
   ]
 }
