@@ -25,5 +25,18 @@
       "id": 7
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "product": "Pamplemousse",
+      "quantity": "5",
+      "price": 11,
+      "id": 1
+    },
+    {
+      "product": "Tomates",
+      "quantity": "5",
+      "price": 11,
+      "id": 2
+    }
+  ]
 }

@@ -9,8 +9,7 @@ class ItemsList extends Component {
             items : [],
             quantity: 0,
             product: "",
-            price: 0,
-            checked: false
+            price: 0
         };
         uniqueId.enableUniqueIds(this);
         this.price = React.createRef();
@@ -28,7 +27,9 @@ class ItemsList extends Component {
 
     handleChange = event => {
         this.setState({ [event.target.name]: event.target.value });
-        this.setState({price : this.price.current.innerHTML})
+        // Converting the price string into an int
+        const price = parseInt(this.price.current.innerHTML);
+        this.setState({price : price});
     };
 
     handleSubmit = event => {
@@ -38,7 +39,7 @@ class ItemsList extends Component {
             .then(res => {
                 console.log(res);
                 console.log(res.data);
-            })
+            });
     };
 
     render() {

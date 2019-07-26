@@ -18,7 +18,6 @@ class ProductsList extends Component {
                 let items = response.data.map((item, index) => {
                     console.log(response.data);
                     return <tr key={index}>
-                            <th scope="row">{item.id}</th>
                             <td>{item.name}</td>
                             <td>{item.description}</td>
                             <td>{item.cat}</td>
@@ -53,7 +52,6 @@ class ProductsList extends Component {
                 <table className="table">
                     <thead>
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Nom</th>
                         <th scope="col">Description</th>
                         <th scope="col">Catégorie</th>
