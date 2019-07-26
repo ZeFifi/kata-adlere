@@ -1,3 +1,5 @@
+![](src/images/logo.png)
+
 # Kata for ADLERE
 
 This project is based on a Kata exercise for ADLERE.
