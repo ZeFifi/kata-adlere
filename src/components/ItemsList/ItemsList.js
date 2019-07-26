@@ -9,10 +9,12 @@ class ItemsList extends Component {
             items : [],
             quantity: 0,
             product: "",
-            price: 0
+            price: 0,
+            total: 0
         };
         uniqueId.enableUniqueIds(this);
         this.price = React.createRef();
+        this.quantity = React.createRef();
     }
 
     componentDidMount() {
@@ -27,15 +29,20 @@ class ItemsList extends Component {
 
     handleChange = event => {
         this.setState({ [event.target.name]: event.target.value });
+        // Converting the quantity string into an int
+        const quantity = parseFloat(this.quantity.current.value);
+        this.setState({quantity : quantity});
         // Converting the price string into an int
         const price = parseFloat(this.price.current.innerHTML);
         this.setState({price : price});
+        // Total for 1 product
+        this.setState({total : this.state.quantity * this.state.price})
     };
 
     handleSubmit = event => {
         event.preventDefault();
-        const { product, quantity, price} = this.state;
-        axios.post(`http://localhost:3001/cart`, {product, quantity, price})
+        const { product, quantity, price, total} = this.state;
+        axios.post(`http://localhost:3001/cart`, {product, quantity, price, total})
             .then(res => {
                 console.log(res);
                 console.log(res.data);
@@ -64,15 +71,16 @@ class ItemsList extends Component {
                                     <p className="card-text">{item.description} </p>
                                         <span ref={this.price} value={item.price} onChange={this.handleChange}>{item.price}
                                         </span><span>€</span>
+                                    <input type="number" onChange={this.handleChange} name="total" />
                                     <form onSubmit={this.handleSubmit}>
                                         <div className="form-group">
-                                            <select className="form-control" name="quantity" onChange={this.handleChange} >
-                                                <option value="default">Choisissez une quantité</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                                <option value="5">5</option>
+                                            <select className="form-control" value={item.quantity} onChange={this.handleChange} >
+                                                <option ref={this.quantity} value="default">Choisissez une quantité</option>
+                                                <option ref={this.quantity} value="1">1</option>
+                                                <option ref={this.quantity} value="2">2</option>
+                                                <option ref={this.quantity} value="3">3</option>
+                                                <option ref={this.quantity} value="4">4</option>
+                                                <option ref={this.quantity} value="5">5</option>
                                             </select>
                                         </div>
                                         <div className="form-check">
