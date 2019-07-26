@@ -29,7 +29,6 @@ class ItemsList extends Component {
 
     handleChange = event => {
         this.setState({ [event.target.name]: event.target.value });
-        console.log(this.price);
         // Total for 1 product
         this.setState({total : this.state.quantity * this.state.price})
     };
@@ -41,8 +40,9 @@ class ItemsList extends Component {
     };
 
     handlePrice = event => {
+        console.log(this.price.current);
         // Converting the quantity string into an int
-        const price = parseFloat(event.target.innerHTML);
+        const price = parseFloat(this.price.current.innerHTML);
         this.setState({price : price});
     };
 
@@ -76,7 +76,7 @@ class ItemsList extends Component {
                                     }
                                     <h5 className="card-title" name={item.name}>{item.name}</h5>
                                     <p className="card-text">{item.description} </p>
-                                        <span ref={this.price} value={item.price} onChange={this.handlePrice}>{item.price}
+                                        <span ref={this.price} onClick={this.handlePrice} value={item.price}>{item.price}
                                         </span><span>€</span>
                                     <form onSubmit={event => this.handleSubmit(event)}>
                                         <div className="form-group">

@@ -42,33 +42,6 @@
     }
   ],
   "cart": [
-    {
-      "product": "Pamplemousse",
-      "quantity": 3,
-      "price": 0,
-      "total": 0,
-      "id": 1
-    },
-    {
-      "product": "Tomates",
-      "quantity": 3,
-      "price": 0,
-      "total": 0,
-      "id": 2
-    },
-    {
-      "product": "Kiwis",
-      "quantity": 3,
-      "price": 0,
-      "total": 0,
-      "id": 3
-    },
-    {
-      "product": "Kiwis",
-      "quantity": 5,
-      "price": 0,
-      "total": 0,
-      "id": 4
-    }
+    
   ]
 }
