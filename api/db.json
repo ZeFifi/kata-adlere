@@ -23,6 +23,22 @@
       "price": "11",
       "image": "https://img-3.journaldesfemmes.fr/Y80Tv_whjHLpqe5xj4zfhEKnGww=/910x607/smart/7cd11422bbd64b76ad8c0b8ff3dc0e3a/ccmcms-jdf/10659032.jpg",
       "id": 7
+    },
+    {
+      "name": "Kiwis",
+      "description": "Kiwis du Portugal",
+      "cat": "Fruit",
+      "price": "27",
+      "image": "https://assets.afcdn.com/recipe/20170607/67631_w300h300c1cx350cy350.jpg",
+      "id": 8
+    },
+    {
+      "name": "Poireaux",
+      "description": "Poireaux du Portugal",
+      "cat": "Légume",
+      "price": "0.5",
+      "image": "https://assets.afcdn.com/recipe/20170607/67489_w300h300c1.jpg",
+      "id": 9
     }
   ],
   "cart": [
@@ -43,6 +59,12 @@
       "quantity": "1",
       "price": 11,
       "id": 3
+    },
+    {
+      "product": "Poireaux",
+      "quantity": "5",
+      "price": 0.5,
+      "id": 4
     }
   ]
 }

@@ -28,7 +28,7 @@ class ItemsList extends Component {
     handleChange = event => {
         this.setState({ [event.target.name]: event.target.value });
         // Converting the price string into an int
-        const price = parseInt(this.price.current.innerHTML);
+        const price = parseFloat(this.price.current.innerHTML);
         this.setState({price : price});
     };
 
