@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import uniqueId from "react-html-id";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class ItemsList extends Component {
   constructor(props) {
@@ -16,6 +18,8 @@ class ItemsList extends Component {
     this.price = React.createRef();
     this.quantity = React.createRef();
   }
+
+  notify = () => toast.success("Produit ajouté au panier !");
 
   componentDidMount() {
     let itemsStock = `http://localhost:3001/items`;
@@ -56,6 +60,8 @@ class ItemsList extends Component {
         console.log(res);
         console.log(res.data);
       });
+    console.log("Ajouté au panier")
+    this.notify();
   };
 
   render() {
@@ -64,6 +70,7 @@ class ItemsList extends Component {
 
     return (
       <React.Fragment>
+        <ToastContainer />
         <div className="container mb-5">
           <h1>{title}</h1>
           <div className="row">
