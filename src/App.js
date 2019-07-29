@@ -9,7 +9,7 @@ import "./app.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "shards-ui/dist/css/shards.min.css";
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Navbar />
@@ -18,6 +18,6 @@ function App() {
       <Route path="/cart" component={Cart} />
     </Router>
   );
-}
+};
 
 export default App;
