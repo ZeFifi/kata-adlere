@@ -14,32 +14,7 @@ class ProductsList extends Component {
   componentDidMount() {
     let itemsStock = "http://localhost:3001/items";
     axios.get(itemsStock).then(response => {
-      let items = response.data.map((item, index) => {
-        console.log(response.data);
-        return (
-          <tr key={index}>
-            <td>{item.name}</td>
-            <td>{item.description}</td>
-            <td>{item.cat}</td>
-            <td>{item.price}€</td>
-            <td>
-              <img
-                className="table-product-image"
-                src={item.image}
-                alt={item.image}
-              />
-            </td>
-            <td>
-              <button
-                className="btn btn-danger"
-                onClick={() => this.handleDeleteItems(item.id)}
-              >
-                Supprimer
-              </button>
-            </td>
-          </tr>
-        );
-      });
+      let items = response.data;
       this.setState({ items });
     });
   }
@@ -70,7 +45,33 @@ class ProductsList extends Component {
               <th scope="col">Action</th>
             </tr>
           </thead>
-          <tbody>{items}</tbody>
+          <tbody>
+            {items.map((item, index) => {
+              return (
+                <tr key={index}>
+                  <td>{item.name}</td>
+                  <td>{item.description}</td>
+                  <td>{item.cat}</td>
+                  <td>{item.price}€</td>
+                  <td>
+                    <img
+                      className="table-product-image"
+                      src={item.image}
+                      alt={item.image}
+                    />
+                  </td>
+                  <td>
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => this.handleDeleteItems(item.id)}
+                    >
+                      Supprimer
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
         </table>
       </React.Fragment>
     );
