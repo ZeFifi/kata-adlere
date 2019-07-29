@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
 
 import "./ProductsList.css";
 
@@ -23,6 +24,8 @@ class ProductsList extends Component {
     });
   }
 
+  notify = () => toast.success("Prix modifié avec succès !");
+
   handlePromoChange = event => {
       this.setState({ [event.target.name]: event.target.value });
   };
@@ -39,19 +42,22 @@ class ProductsList extends Component {
   };
 
   handleUpdateItems = (id, event) => {
+    event.preventDefault();
     const {price} = this.state;
     axios.patch(`http://localhost:3001/items/${id}`, {price})
-      .then(response => {
-        console.log("put", response.data.name)
-        this.setState({ price });
-      }
-  )
+      .then(() =>
+        this.notify()
+      );
+    setTimeout(() => {
+      document.location.reload();
+    }, 3000)
   };
 
   render() {
     const { items } = this.state;
     return (
       <React.Fragment>
+        <ToastContainer autoClose={3000} />
         <table className="table">
           <thead>
             <tr>
