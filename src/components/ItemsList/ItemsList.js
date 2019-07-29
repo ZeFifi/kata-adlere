@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import uniqueId from "react-html-id";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 class ItemsList extends Component {
   constructor(props) {
@@ -34,7 +34,7 @@ class ItemsList extends Component {
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
-    this.setState({ price : this.state.price });
+    this.setState({ price: this.state.price });
     // Total for 1 product
     this.setState({ total: this.state.quantity * this.state.price });
   };
@@ -50,11 +50,7 @@ class ItemsList extends Component {
     const { product, quantity, price, total } = this.state;
     axios
       .post(`http://localhost:3001/cart`, { product, quantity, price, total })
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      });
-    this.notify();
+      .then(() => this.notify());
   };
 
   render() {
@@ -85,11 +81,7 @@ class ItemsList extends Component {
                       {item.name}
                     </h5>
                     <p className="card-text">{item.description} </p>
-                    <span
-                      ref={this.price}
-                    >
-                      {item.price}
-                    </span>
+                    <span ref={this.price}>{item.price}</span>
                     <span>€</span>
                     <form onSubmit={event => this.handleSubmit(event)}>
                       <div className="form-group">
