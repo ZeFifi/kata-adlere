@@ -1,22 +1,6 @@
 {
   "items": [
     {
-      "name": "Pamplemousse",
-      "description": "Pamplemousse du Portugal",
-      "cat": "Fruit",
-      "price": "11",
-      "image": "https://img-3.journaldesfemmes.fr/q4WrY6PXpxUxx1x3hAV3kWjmxik=/910x607/smart/4ef3331b005d45afafa8afa03cac5547/ccmcms-jdf/10662448.jpg",
-      "id": 5
-    },
-    {
-      "name": "Tomates",
-      "description": "Tomates du Portugal",
-      "cat": "Légume",
-      "price": "11",
-      "image": "https://www.saveol.com/sites/default/files/2018-02/tomate-classique_1.png",
-      "id": 6
-    },
-    {
       "name": "Avocat",
       "description": "Avocat du Portugal",
       "cat": "Fruit",

@@ -32,7 +32,7 @@ class ProductsList extends Component {
             <td>
               <button
                 className="btn btn-danger"
-                onClick={() => this.handleDeleteFruits(item.id)}
+                onClick={() => this.handleDeleteItems(item.id)}
               >
                 Supprimer
               </button>
@@ -44,9 +44,8 @@ class ProductsList extends Component {
     });
   }
 
-  handleDeleteFruits = id => {
+  handleDeleteItems = id => {
     const { items } = this.state;
-
     axios.delete(`http://localhost:3001/items/${id}`).then(response => {
       console.log(response.data);
       this.setState({ items });
