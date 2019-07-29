@@ -7,8 +7,11 @@ class ProductsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: []
+      items: [],
+      price: ""
     };
+
+    this.promo = React.createRef();
   }
 
   componentDidMount() {
@@ -16,8 +19,13 @@ class ProductsList extends Component {
     axios.get(itemsStock).then(response => {
       let items = response.data;
       this.setState({ items });
+      console.log("items", items)
     });
   }
+
+  handlePromoChange = event => {
+      this.setState({ [event.target.name]: event.target.value });
+  };
 
   handleDeleteItems = id => {
     const { items } = this.state;
@@ -28,6 +36,16 @@ class ProductsList extends Component {
     setTimeout(() => {
       document.location.reload();
     }, 1000);
+  };
+
+  handleUpdateItems = (id, event) => {
+    const {price} = this.state;
+    axios.patch(`http://localhost:3001/items/${id}`, {price})
+      .then(response => {
+        console.log("put", response.data.name)
+        this.setState({ price });
+      }
+  )
   };
 
   render() {
@@ -41,6 +59,7 @@ class ProductsList extends Component {
               <th scope="col">Description</th>
               <th scope="col">Catégorie</th>
               <th scope="col">Prix</th>
+              <th scope="col">Promo ?</th>
               <th scope="col">Image</th>
               <th scope="col">Action</th>
             </tr>
@@ -53,6 +72,7 @@ class ProductsList extends Component {
                   <td>{item.description}</td>
                   <td>{item.cat}</td>
                   <td>{item.price}€</td>
+                  <td><input onChange={this.handlePromoChange} name="price" className="promo" type="number" width="15" maxLength="3" /></td>
                   <td>
                     <img
                       className="table-product-image"
@@ -66,6 +86,13 @@ class ProductsList extends Component {
                       onClick={() => this.handleDeleteItems(item.id)}
                     >
                       Supprimer
+                    </button>
+                    &nbsp;
+                    <button
+                      className="btn btn-primary"
+                      onClick={(event) => this.handleUpdateItems(item.id, event)}
+                    >
+                      Modifier
                     </button>
                   </td>
                 </tr>
