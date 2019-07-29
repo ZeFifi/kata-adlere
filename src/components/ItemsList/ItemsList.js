@@ -19,8 +19,6 @@ class ItemsList extends Component {
     this.quantity = React.createRef();
   }
 
-  notify = () => toast.success("Produit ajouté au panier !");
-
   componentDidMount() {
     let itemsStock = `http://localhost:3001/items`;
     axios
@@ -32,8 +30,11 @@ class ItemsList extends Component {
       .catch(error => console.log(error));
   }
 
+  notify = () => toast.success("Produit ajouté au panier !");
+
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
+    this.setState({ price : this.state.price });
     // Total for 1 product
     this.setState({ total: this.state.quantity * this.state.price });
   };
@@ -42,13 +43,6 @@ class ItemsList extends Component {
     // Converting the quantity string into an int
     const quantity = parseFloat(event.target.value);
     this.setState({ quantity: quantity });
-  };
-
-  handlePrice = event => {
-    console.log(this.price.current);
-    // Converting the quantity string into an int
-    const price = parseFloat(this.price.current.innerHTML);
-    this.setState({ price: price });
   };
 
   handleSubmit = event => {
@@ -60,7 +54,6 @@ class ItemsList extends Component {
         console.log(res);
         console.log(res.data);
       });
-    console.log("Ajouté au panier")
     this.notify();
   };
 
@@ -94,8 +87,6 @@ class ItemsList extends Component {
                     <p className="card-text">{item.description} </p>
                     <span
                       ref={this.price}
-                      onClick={this.handlePrice}
-                      value={item.price}
                     >
                       {item.price}
                     </span>
